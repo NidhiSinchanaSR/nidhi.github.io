@@ -1,103 +1,89 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-background text-foreground flex flex-col">
+      {/* Navbar */}
+      <header className="flex justify-between items-center p-4 border-b border-border">
+        <h1 className="text-xl font-bold">Nidhi</h1>
+        <nav className="flex items-center gap-6">
+          <Link href="/about" className="hover:text-primary transition">
+            About
+          </Link>
+          <Link href="/resume" className="hover:text-primary transition">
+            Resume
+          </Link>
+          <Link href="/portfolio" className="hover:text-primary transition">
+            Portfolio
+          </Link>
+          <Link href="/blog" className="hover:text-primary transition">
+            Blog
+          </Link>
+          <Link href="/contact" className="hover:text-primary transition">
+            Contact
+          </Link>
+          <ModeToggle />
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center text-center px-4 py-24 space-y-6 max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          Hi, I&apos;m Your Name.
+        </h2>
+        <p className="max-w-xl text-muted-foreground">
+          I&apos;m a software developer / designer / engineer passionate about building elegant, efficient digital experiences.
+        </p>
+        <div className="flex gap-4 mt-6">
+          <Link href="/portfolio">
+            <Button size="lg">View Portfolio</Button>
+          </Link>
+          <Link href="/contact">
+            <Button size="lg" variant="outline">Get in Touch</Button>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* About Summary */}
+      <section className="bg-muted/10 py-16 px-4 space-y-8 text-center max-w-4xl mx-auto rounded-xl">
+        <h3 className="text-2xl font-semibold mb-4">About Me</h3>
+        <p className="text-muted-foreground">
+          I specialize in creating modern web applications and interactive user interfaces using the latest technologies. When I&apos;m not coding, I enjoy photography, hiking, and exploring new places.
+        </p>
+      </section>
+
+      {/* Portfolio Highlights */}
+      <section className="py-16 px-4 space-y-8 text-center max-w-6xl mx-auto">
+        <h3 className="text-2xl font-semibold mb-6">Portfolio Highlights</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            ["Project One", "A full-stack web app with real-time data visualization."],
+            ["Project Two", "An open-source library for UI components."],
+            ["Project Three", "A mobile app to improve productivity and workflow."],
+          ].map(([title, desc], i) => (
+            <div
+              key={i}
+              className="p-6 border border-border rounded-2xl shadow-sm hover:shadow-md transition-all bg-card"
+            >
+              <h4 className="font-medium text-lg">{title}</h4>
+              <p className="text-muted-foreground text-sm mt-2">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer / Contact */}
+      <footer className="mt-auto py-8 px-4 bg-muted/20 border-t border-border text-center">
+        <h4 className="text-lg font-semibold mb-2">Let&apos;s Connect</h4>
+        <p className="text-sm text-muted-foreground mb-4">
+          Feel free to reach out via email at <a href="mailto:your.email@example.com" className="text-primary underline">your.email@example.com</a> or find me on social media.
+        </p>
+        <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
       </footer>
-    </div>
+    </main>
   );
 }
