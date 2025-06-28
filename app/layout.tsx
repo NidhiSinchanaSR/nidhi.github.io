@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Link from "next/link";
-import { ModeToggle } from "@/components/mode-toggle"; // adjust path if needed
 import Header from "@/components/header";
 
 const geistSans = Geist({
@@ -17,8 +15,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nidhi",
-  description: "Portfolio",
+  title: "Nidhi - Software Engineer Portfolio",
+  description: "Software Engineer passionate about building elegant, efficient digital experiences and solving complex problems through innovative technology solutions.",
+  keywords: ["Software Engineer", "React", "Node.js", "Machine Learning", "Portfolio", "Web Development"],
+  authors: [{ name: "Nidhi" }],
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  robots: "index, follow",
+  openGraph: {
+    title: "Nidhi - Software Engineer Portfolio",
+    description: "Software Engineer passionate about building elegant, efficient digital experiences",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nidhi - Software Engineer Portfolio",
+    description: "Software Engineer passionate about building elegant, efficient digital experiences",
+  },
 };
 
 export default function RootLayout({
@@ -28,8 +40,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
         <ThemeProvider
           attribute="class"
@@ -37,9 +52,12 @@ export default function RootLayout({
           enableSystem={true}
           disableTransitionOnChange
         >
-          <Header />
-          {/* PAGE CONTENT */}
-          {children}
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-1">
+              {children}
+            </main>
+          </div>
         </ThemeProvider>
       </body>
     </html>

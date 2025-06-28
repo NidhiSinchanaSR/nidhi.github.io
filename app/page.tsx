@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ModeToggle } from "@/components/mode-toggle";
 import {
   Github,
   Linkedin,
@@ -25,44 +24,47 @@ import {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background text-foreground flex flex-col">
-      <div className="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto px-4 py-24 gap-12">
-        <section className="flex flex-col items-center justify-center text-center px-4 py-24 space-y-6 max-w-4xl mx-auto md:mx-0 md:text-left md:items-start">
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      {/* Hero Section */}
+      <div className="flex flex-col lg:flex-row items-center justify-center max-w-6xl mx-auto px-4 py-24 gap-12">
+        <section className="flex flex-col items-center justify-center text-center px-4 py-12 space-y-6 max-w-4xl mx-auto lg:mx-0 lg:text-left lg:items-start">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Hi, I&apos;m Nidhi
           </h2>
-          <p className="max-w-xl text-muted-foreground">
+          <p className="max-w-xl text-muted-foreground text-sm sm:text-base">
             I&apos;m a Software Engineer passionate about building elegant,
             efficient digital experiences and solving complex problems through
             innovative technology solutions.
           </p>
-          <div className="flex gap-4 mt-6">
-            <Link href="/portfolio">
-              <Button size="lg">View Portfolio</Button>
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto">
+            <Link href="/portfolio" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto">
+                View Portfolio
+              </Button>
             </Link>
-            <Link href="/contact">
-              <Button size="lg" variant="outline">
+            <Link href="/contact" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto">
                 Get in Touch
               </Button>
             </Link>
           </div>
         </section>
 
-        <div className="flex-1 max-w-md">
+        <div className="flex-1 max-w-md w-full">
           <img
-            src="/profile.jpeg"
+            src="https://NidhiSinchanaSR.github.io/nidhi.github.io/profile.jpeg"
             alt="Nidhi"
-            className="rounded-lg shadow-lg w-full"
+            className="rounded-lg shadow-lg w-full h-auto object-cover"
           />
         </div>
       </div>
 
       {/* Quick Links */}
       <section className="px-4 py-8 max-w-4xl mx-auto">
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
           <Link href="https://github.com/NidhiSinchanaSR" target="_blank">
-            <Button variant="outline" size="sm">
-              <Github className="w-4 h-4 mr-2" />
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm">
+              <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
               GitHub
             </Button>
           </Link>
@@ -70,26 +72,26 @@ export default function HomePage() {
             href="https://www.linkedin.com/in/nidhi-sinchana-sr-7809bb223/"
             target="_blank"
           >
-            <Button variant="outline" size="sm">
-              <Linkedin className="w-4 h-4 mr-2" />
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm">
+              <Linkedin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
               LinkedIn
             </Button>
           </Link>
           <Link href="" target="_blank">
-            <Button variant="outline" size="sm">
-              <Code className="w-4 h-4 mr-2" />
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm">
+              <Code className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
               GeeksForGeeks
             </Button>
           </Link>
           <Link href="" target="_blank">
-            <Button variant="outline" size="sm">
-              <Trophy className="w-4 h-4 mr-2" />
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm">
+              <Trophy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
               CodeForces
             </Button>
           </Link>
           <Link href="" target="_blank">
-            <Button variant="outline" size="sm">
-              <Award className="w-4 h-4 mr-2" />
+            <Button variant="outline" size="sm" className="text-xs sm:text-sm">
+              <Award className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
               CodeChef
             </Button>
           </Link>
@@ -585,6 +587,6 @@ export default function HomePage() {
           &copy; {new Date().getFullYear()} Nidhi. All rights reserved.
         </p>
       </footer>
-    </main>
+    </div>
   );
 }
