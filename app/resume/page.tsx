@@ -6,7 +6,7 @@ export default function ResumePage() {
       {/* Embed PDF */}
       <div className="mb-6">
         <embed
-          src="/Nidhi.pdf"
+          src="https://NidhiSinchanaSR.github.io/nidhi.github.io/Nidhi.pdf"
           type="application/pdf"
           width="100%"
           height="1000px"
