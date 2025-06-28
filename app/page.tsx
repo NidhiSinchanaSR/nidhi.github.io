@@ -50,7 +50,7 @@ export default function HomePage() {
 
         <div className="flex-1 max-w-md">
           <img
-            src="/profile.jpeg"
+            src="https://NidhiSinchanaSR.github.io/nidhi.github.io/profile.jpeg"
             alt="Nidhi"
             className="rounded-lg shadow-lg w-full"
           />
